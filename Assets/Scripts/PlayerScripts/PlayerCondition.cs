@@ -11,7 +11,7 @@ public class PlayerCondition : MonoBehaviour
     private Condition hungerCondition { get { return conditionController.hunger; } }
     private Condition staminaCondition { get { return conditionController.stamina; } }
 
-    public float naturalDeath;
+    public float naturalDamage;
 
     private void Update()
     {
@@ -20,7 +20,7 @@ public class PlayerCondition : MonoBehaviour
 
         if (hungerCondition.curValue <= 0f)
         {
-            hpCondition.Decrease(naturalDeath * Time.deltaTime);
+            hpCondition.Decrease(naturalDamage * Time.deltaTime);
         }
 
         if(hpCondition.curValue <= 0f)
