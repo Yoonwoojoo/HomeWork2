@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCondition : MonoBehaviour
+public interface IDamagable
+{ 
+    void PhysicalDamaged(int damage);
+}
+public class PlayerCondition : MonoBehaviour, IDamagable
 {
     public ConditionController conditionController;
 
@@ -12,6 +16,8 @@ public class PlayerCondition : MonoBehaviour
     private Condition staminaCondition { get { return conditionController.stamina; } }
 
     public float naturalDamage;
+
+    public event Action onDamaged;
 
     private void Update()
     {
@@ -33,4 +39,11 @@ public class PlayerCondition : MonoBehaviour
     {
         Time.timeScale = 0f;
     }
+
+    public void PhysicalDamaged(int damage)
+    {
+        hpCondition.Decrease(damage);
+        onDamaged?.Invoke();
+    }
+    
 }
