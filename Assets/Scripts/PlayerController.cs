@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
@@ -49,16 +50,6 @@ public class PlayerController : MonoBehaviour
 
         _rb.velocity = dir;
     }
-
-    private void CameraLook()
-    {
-        camCurrentXRot += mouseDelta.y * lookSensitivity; // 마우스의 y축을 고정시켜야함
-        camCurrentXRot = Mathf.Clamp(camCurrentXRot, minXLook, maxXLook); // 제한하려는 대상, 최솟값 ,최댓값
-        cameraContainer.localEulerAngles = new Vector3(-camCurrentXRot, 0, 0);
-
-        transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
-    }
-
     public void OnMove(InputAction.CallbackContext context)      // SendMessage 방식이 아닌 Invoke Unity Events 이므로 InputAction을 사용
     {
         if(context.phase == InputActionPhase.Performed)
@@ -71,8 +62,46 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void CameraLook()
+    {
+        camCurrentXRot += mouseDelta.y * lookSensitivity; // 마우스의 y축을 고정시켜야함
+        camCurrentXRot = Mathf.Clamp(camCurrentXRot, minXLook, maxXLook); // 제한하려는 대상, 최솟값 ,최댓값
+        cameraContainer.localEulerAngles = new Vector3(-camCurrentXRot, 0, 0);
+
+        transform.eulerAngles += new Vector3(0, mouseDelta.x * lookSensitivity, 0);
+    }
+
+
     public void OnLook(InputAction.CallbackContext context)
     {
         mouseDelta = context.ReadValue<Vector2>();
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started && IsGrounded())
+        {
+            _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+        }
+    }
+
+    bool IsGrounded()
+    {
+        Ray[] rays = new Ray[4]
+        {
+            new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down)
+        };
+
+        for (int i = 0; i < rays.Length; i++)
+        {
+            if (Physics.Raycast(rays[i], 2f, groundLayerMask))
+            { 
+                return true; 
+            }
+        }
+        return false;
     }
 }
