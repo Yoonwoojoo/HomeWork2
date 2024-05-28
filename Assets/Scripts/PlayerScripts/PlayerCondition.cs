@@ -33,10 +33,16 @@ public class PlayerCondition : MonoBehaviour, IDamagable
             deadUI.SetActive(false);
         }
     }
+
+    private void Start()
+    {
+        CharacterManager.Instance.Player.playerController.OnJumpEvent += DecreaseStamina;
+    }
+
+
     private void Update()
     {
         hungerCondition.Decrease(hungerCondition.passiveValue * Time.deltaTime);
-        staminaCondition.Decrease(staminaCondition.passiveValue * Time.deltaTime);
 
         if (hungerCondition.curValue <= 0f)
         {
@@ -47,6 +53,15 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         {
             Die();
         }
+    }
+    private void DecreaseStamina()
+    {
+        staminaCondition.Decrease(10f);
+    }
+
+    public bool IsStaminaDepleted()
+    {
+        return staminaCondition.curValue <= 0f;
     }
 
     private void Die()

@@ -16,12 +16,14 @@ public class PlayerController : MonoBehaviour
     public Action addItem;
 
     private PlayerJump playerJump;
+    private PlayerCondition playerCondition;
     private PlayerInteraction playerInteraction;
 
     private void Awake()
     {
-        playerInteraction = GetComponent<PlayerInteraction>();
         playerJump = GetComponent<PlayerJump>();
+        playerCondition = GetComponent<PlayerCondition>();
+        playerInteraction = GetComponent<PlayerInteraction>();
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && playerJump.IsGrounded())
+        if (context.phase == InputActionPhase.Started && playerJump.IsGrounded() && !playerCondition.IsStaminaDepleted())
         {
             OnJumpEvent?.Invoke();
         }
