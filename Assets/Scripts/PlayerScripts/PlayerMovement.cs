@@ -3,20 +3,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private GameController gameController;
+    private PlayerController playerController;
     private Rigidbody _rb;
     private Vector2 moveDirection = Vector2.zero;
+    private Vector3 beforeDirection;
     public float moveSpeed ;
 
     private void Awake()
     {
-        gameController = GetComponent<GameController>();
-        _rb = gameController.GetComponent<Rigidbody>();
+        playerController = GetComponent<PlayerController>();
+        _rb = playerController.GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        gameController.OnMoveEvent += Move;
+        playerController.OnMoveEvent += Move;
     }
 
     private void FixedUpdate()
@@ -30,11 +31,24 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ApplyMove(Vector3 direction)
     {
-        direction = transform.forward * gameController.moveInput.y + transform.right * gameController.moveInput.x;
+        direction = transform.forward * playerController.moveInput.y + transform.right * playerController.moveInput.x;
         direction *= moveSpeed;
         direction.y = _rb.velocity.y;
 
-        _rb.velocity = direction;
+        if (direction != Vector3.zero)
+        {
+            _rb.velocity = direction;
+            beforeDirection = direction;
+        }
+
+        else
+        {
+            if (direction != beforeDirection)
+            {
+                _rb.velocity = direction;
+                beforeDirection = direction;
+            }
+        }
     }
 
 }

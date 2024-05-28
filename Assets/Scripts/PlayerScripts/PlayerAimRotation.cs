@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerAimRotation : MonoBehaviour
 {
-    private GameController gameController;
+    private PlayerController gameController;
     private Vector2 aimDirection = Vector2.right;
     public Transform cameraContainer;
     public float minXLook;
@@ -16,7 +16,7 @@ public class PlayerAimRotation : MonoBehaviour
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        gameController = GetComponent<GameController>();
+        gameController = GetComponent<PlayerController>();
     }
 
     private void Start()

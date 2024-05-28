@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class DamageIndicator : MonoBehaviour
 {
-    public PlayerCondition PlayerCondition;
     public Image image;
     public float flashSpeed;
 
@@ -14,7 +13,7 @@ public class DamageIndicator : MonoBehaviour
 
     private void Start()
     {
-        PlayerCondition.onDamaged += Flash;
+        CharacterManager.Instance.Player.playerCondition.onDamaged += Flash;
     }
 
     private void Flash()

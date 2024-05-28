@@ -5,23 +5,44 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    private GameController gameController;
+    private PlayerController playerController;
     private Rigidbody _rb;
     public float jumpPower;
 
     private void Awake()
     {
-        gameController = GetComponent<GameController>();
-        _rb = gameController.GetComponent<Rigidbody>();
+        playerController = GetComponent<PlayerController>();
+        _rb = playerController.GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        gameController.OnJumpEvent += Jump;
+        playerController.OnJumpEvent += Jump;
     }
 
-    private void Jump()
+    public void Jump()
     {
         _rb.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+    }
+
+    public bool IsGrounded()
+    {
+        Ray[] rays = new Ray[4]
+        {
+            new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-transform.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+        };
+
+        for (int i = 0; i < rays.Length; i++)
+        {
+            if (Physics.Raycast(rays[i], 2f, playerController.groundLayerMask))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
