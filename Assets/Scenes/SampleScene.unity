@@ -3062,7 +3062,7 @@ MonoBehaviour:
   curValue: 0
   startValue: 100
   maxValue: 100
-  passiveValue: 0
+  passiveValue: 1
   uiBar: {fileID: 1379009152}
 --- !u!1001 &383873463369577663
 PrefabInstance:

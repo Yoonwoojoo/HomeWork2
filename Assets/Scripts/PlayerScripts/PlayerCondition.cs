@@ -43,6 +43,7 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     private void Update()
     {
         hungerCondition.Decrease(hungerCondition.passiveValue * Time.deltaTime);
+        staminaCondition.Increase(staminaCondition.passiveValue * Time.deltaTime);
 
         if (hungerCondition.curValue <= 0f)
         {
@@ -61,7 +62,7 @@ public class PlayerCondition : MonoBehaviour, IDamagable
 
     public bool IsStaminaDepleted()
     {
-        return staminaCondition.curValue <= 0f;
+        return staminaCondition.curValue < 10f;
     }
 
     private void Die()
