@@ -28,6 +28,8 @@ public class InventoryUI : MonoBehaviour
     ItemData selectedItem;
     int selectedItemIndex = 0;
 
+    int curEquipIndex;
+
     private void Start()
     {
         playerController = CharacterManager.Instance.Player.playerController;
@@ -225,5 +227,36 @@ public class InventoryUI : MonoBehaviour
             ClearSelectedItemWindow();
         }
         UpdateUI();
+    }
+
+    public void OnEquipButton()
+    {
+        if (slots[curEquipIndex].equipped)
+        {
+            UnEquip(curEquipIndex);
+        }
+
+        slots[selectedItemIndex].equipped = true;
+        curEquipIndex = selectedItemIndex;
+        CharacterManager.Instance.Player.playerEquipment.EquipNew(selectedItem);
+        UpdateUI();
+
+        SelectItem(selectedItemIndex);
+    }
+
+    void UnEquip(int index)
+    {
+        slots[index].equipped = false;
+        CharacterManager.Instance.Player.playerEquipment.UnEquip();
+
+        if(selectedItemIndex == index)
+        {
+            SelectItem(selectedItemIndex);
+        }
+    }
+
+    public void OnUnEquipButton()
+    {
+        UnEquip(selectedItemIndex);
     }
 }

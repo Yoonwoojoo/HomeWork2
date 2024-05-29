@@ -2333,98 +2333,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &625695118
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 625695119}
-  - component: {fileID: 625695121}
-  - component: {fileID: 625695120}
-  m_Layer: 6
-  m_Name: EquipCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &625695119
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625695118}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1639020430}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &625695120
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625695118}
-  m_Enabled: 1
---- !u!20 &625695121
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625695118}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 3
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 256
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!1 &646390848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3125,7 +3033,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 900693413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 646390853}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: OnEquipButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &900693413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3932,7 +3852,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1138119953}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 646390853}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
+        m_MethodName: OnUnEquipButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1138119953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4199,6 +4131,7 @@ GameObject:
   - component: {fileID: 1203324385}
   - component: {fileID: 1203324386}
   - component: {fileID: 1203324387}
+  - component: {fileID: 1203324390}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -4329,6 +4262,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4a0873f6-39a3-4dbd-9f69-6ba117003883
     m_ActionName: Player/Inventory[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1203324389}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d32ae479-cd86-4e1a-9794-2349f74fe08d
+    m_ActionName: Player/Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyBoard&Mouse
   m_DefaultActionMap: Player
@@ -4474,6 +4423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   playerCondition: {fileID: 0}
+  playerEquipment: {fileID: 0}
   itemData: {fileID: 0}
   dropItemTransform: {fileID: 1547929374}
 --- !u!114 &1203324389
@@ -4494,6 +4444,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 183
   canLook: 1
+--- !u!114 &1203324390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203324377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31b0a3f9cab2e64c9d5dbe2b311b996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curEquip: {fileID: 0}
+  equipParent: {fileID: 1203324378}
 --- !u!1001 &1265648341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5638,7 +5602,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
-  - {fileID: 625695119}
   - {fileID: 2008454766}
   m_Father: {fileID: 1203324378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6223,8 +6186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ddafe2ddbf3ee944adea708f31b9b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yPower: 40
-  directionPower: 20
+  yPower: 30
+  xPower: 15
   jumpDuration: 1.5
 --- !u!1 &1926263584
 GameObject:
@@ -6508,7 +6471,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2008454766}
   - component: {fileID: 2008454768}
-  - component: {fileID: 2008454767}
   - component: {fileID: 2008454769}
   m_Layer: 6
   m_Name: MinimapCamera
@@ -6532,14 +6494,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1639020430}
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 90}
---- !u!81 &2008454767
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008454765}
-  m_Enabled: 1
 --- !u!20 &2008454768
 Camera:
   m_ObjectHideFlags: 0

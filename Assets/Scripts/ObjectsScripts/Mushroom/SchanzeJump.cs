@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class SchanzeJump : MonoBehaviour
 {
-    public float yPower; // 수직 방향 힘
-    public float directionPower; // 들어오는 방향의 힘
-    public float jumpDuration; // 점프 상태 유지 시간
+    public float yPower; 
+    public float xPower; 
+    public float jumpDuration; 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,7 +21,7 @@ public class SchanzeJump : MonoBehaviour
                     Vector3 directionToPlayer = (other.transform.position - transform.position).normalized;
 
                     // 포물선을 위한 힘 벡터 계산
-                    Vector3 jumpForce = -directionToPlayer * directionPower + Vector3.up * yPower;
+                    Vector3 jumpForce = -directionToPlayer * xPower + Vector3.up * yPower;
                     targetRb.AddForce(jumpForce, ForceMode.VelocityChange);
 
                     // 점프 상태 설정

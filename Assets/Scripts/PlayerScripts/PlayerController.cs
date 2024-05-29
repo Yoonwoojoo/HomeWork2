@@ -21,12 +21,14 @@ public class PlayerController : MonoBehaviour
     private PlayerJump playerJump;
     private PlayerCondition playerCondition;
     private PlayerInteraction playerInteraction;
+    private PlayerEquipment playerEquipment;
 
     private void Awake()
     {
         playerJump = GetComponent<PlayerJump>();
         playerCondition = GetComponent<PlayerCondition>();
         playerInteraction = GetComponent<PlayerInteraction>();
+        playerEquipment = GetComponent<PlayerEquipment>();
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -70,6 +72,14 @@ public class PlayerController : MonoBehaviour
         {
             OnInventory?.Invoke();
             ToggleCursor();
+        }
+    }
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Performed && playerEquipment.curEquip != null && canLook)
+        {
+            playerEquipment.curEquip.OnAttackInput();
         }
     }
 
