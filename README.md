@@ -35,8 +35,8 @@
 
 #### 4. **점프대** `Rigidbody ForceMode` (난이도 : ★★★☆☆)
     - 캐릭터가 밟을 때 위로 높이 튀어 오르는 점프대 구현
-    - **OnCollisionEnter** 트리거를 사용해 캐릭터가 점프대에 닿았을 때 
-      **ForceMode.Impulse**를 사용해 순간적인 힘을 가함 -> "ForceMode.VelocityChange" 를 활용하여 포물선 형태로 날아감
+    - OnCollisionEnter 트리거를 사용해 캐릭터가 점프대에 닿았을 때 
+      ForceMode.Impulse를 사용해 순간적인 힘을 가함 -> "ForceMode.VelocityChange" 를 활용하여 포물선 형태로 날아감
 #### 4.
 #### 4.
 #### 4.
