@@ -162,7 +162,7 @@
 <br><br>
 
 
-## :joystick: 기술 스택
+## :notebook: 기술 스택
 
 ![TechStack](https://github.com/ZhamesK/2024-Air-Force/assets/167274465/52d9c045-c684-4282-bb6d-8fc178b4915f)
 
