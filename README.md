@@ -99,5 +99,3 @@
 ## :notebook: 기술 스택
 
 ![image](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/ffe62350-efec-4a8c-b5c4-7babcdba1eca)
-
-<br><br>
