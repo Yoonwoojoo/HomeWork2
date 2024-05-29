@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
     public event Action OnJumpEvent;
-    public Action addItem;
+    public Action OnInventory;
+    public Action OnAddItem;
+
+    public bool canLook = true; // 인벤토리 커서 전용
 
     private PlayerJump playerJump;
     private PlayerCondition playerCondition;
@@ -59,5 +62,21 @@ public class PlayerController : MonoBehaviour
             playerInteraction.curInteractGameObject = null;
             playerInteraction.iinteractable = null;
         }
+    }
+
+    public void Inventory(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+        {
+            OnInventory?.Invoke();
+            ToggleCursor();
+        }
+    }
+
+    void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
     }
 }

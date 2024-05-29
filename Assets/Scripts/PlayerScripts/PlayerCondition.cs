@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,7 +40,6 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         CharacterManager.Instance.Player.playerController.OnJumpEvent += DecreaseStamina;
     }
 
-
     private void Update()
     {
         hungerCondition.Decrease(hungerCondition.passiveValue * Time.deltaTime);
@@ -55,6 +55,7 @@ public class PlayerCondition : MonoBehaviour, IDamagable
             Die();
         }
     }
+
     private void DecreaseStamina()
     {
         staminaCondition.Decrease(10f);
@@ -63,6 +64,16 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     public bool IsStaminaDepleted()
     {
         return staminaCondition.curValue < 10f;
+    }
+
+    public void Heal(float size)
+    {
+        hpCondition.Increase(size);
+    }
+
+    public void Eat(float size)
+    {
+        hungerCondition.Increase(size);
     }
 
     private void Die()

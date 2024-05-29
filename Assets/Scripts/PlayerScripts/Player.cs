@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public PlayerCondition playerCondition;
     public ItemData itemData;
 
+    public Transform dropItemTransform;
+
     private void Awake()
     {
         CharacterManager.Instance.Player = this;
