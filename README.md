@@ -44,6 +44,7 @@
     - 캐릭터가 밟을 때 위로 높이 튀어 오르는 점프대 구현
     - OnCollisionEnter 트리거를 사용해 캐릭터가 점프대에 닿았을 때 
       ForceMode.Impulse를 사용해 순간적인 힘 => "ForceMode.VelocityChange" 를 활용하여 포물선 형태로 날아감
+![HomeWork2-1 4](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/1b73df9f-c08d-43c9-876f-fda69032abd3)
       
 #### 5. **아이템 데이터** `ScriptableObject`
     - 다양한 아이템 데이터를 `ScriptableObject`로 정의. 
