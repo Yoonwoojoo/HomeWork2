@@ -33,6 +33,7 @@
     - UI 캔버스에 체력바를 추가하고 플레이어의 체력을 나타내도록 설정. 플레이어의 체력이 변할 때마다 UI 갱신.
 
 ![HomeWork2-1 2](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/89b5b93c-d6f0-464b-a3ba-7e323051d54c)
+![HomeWork2-1 2 2](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/83044ce1-ac61-4ef4-892c-462b69f0066c)
 
 #### 3. **동적 환경 조사** `Raycast` `UI`
     - Raycast를 통해 플레이어가 조사하는 오브젝트의 정보를 UI에 표시.
