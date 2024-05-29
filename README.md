@@ -58,6 +58,8 @@
     - 아이템 장착 및 해제 
     - 아이템 사용 및 버리기
     - 무기 장착 후 공격 기능
+
+![HomeWork2-1 6](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/61947997-7b54-4bfb-b4bc-eff274ea88d4)
     
 
 
