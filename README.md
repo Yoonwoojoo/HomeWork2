@@ -25,6 +25,7 @@
 
 #### 1. **기본 이동 및 점프** `Input System`, `Rigidbody ForceMode`
     - 플레이어의 이동(WASD), 점프(Space) 등을 설정
+    
     ![HomeWork2-1 1 1](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/5ab9cf29-c2ca-422e-94e8-78170ebabb5a)
     ![HomeWork2-1 1 2](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/dee10ef7-f916-465e-b718-19cf4f4d7c46)
 
