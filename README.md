@@ -49,7 +49,10 @@
 #### 5. **아이템 데이터** `ScriptableObject`
     - 다양한 아이템 데이터를 `ScriptableObject`로 정의. 
     - 각 아이템의 이름, 설명, 속성 등을 `ScriptableObject`로 관리
-    
+
+![image](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/8e0bf6bb-63fc-4d84-97bf-69aaae1b4279)
+![image](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/aa4fe758-740c-4666-8290-d721dd3da39d)
+
 <br>
 
 ### 선택 요구 사항
