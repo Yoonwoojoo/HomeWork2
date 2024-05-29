@@ -38,7 +38,7 @@
 
 ### 필수 요구 사항
 
-#### 1. 1. **기본 이동 및 점프** `Input System`, `Rigidbody ForceMode` (난이도 : ★★☆☆☆)
+#### 1. **기본 이동 및 점프** `Input System`, `Rigidbody ForceMode` (난이도 : ★★☆☆☆)
     - 플레이어의 이동(WASD), 점프(Space) 등을 설정
 
 #### 2. 다양한 게임 오브젝트와의 상호작용을 객체지향적으로 구현해봅니다.
