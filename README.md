@@ -38,6 +38,8 @@
     - Raycast를 통해 플레이어가 조사하는 오브젝트의 정보를 UI에 표시.
     - 예) 플레이어가 바라보는 오브젝트의 이름, 설명 등을 화면에 표시.
 
+![HomeWork2-1 3](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/959d953f-be67-4ffd-9b0e-4f3bb32484c4)
+
 #### 4. **점프대** `Rigidbody ForceMode`
     - 캐릭터가 밟을 때 위로 높이 튀어 오르는 점프대 구현
     - OnCollisionEnter 트리거를 사용해 캐릭터가 점프대에 닿았을 때 
