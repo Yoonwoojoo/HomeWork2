@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection = Vector2.zero;
     private Vector3 beforeDirection;
     public float moveSpeed ;
+    private bool isJumping = false; // 점프 상태를 추적
 
     private void Awake()
     {
@@ -22,7 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyMove(moveDirection);
+        if (!isJumping)
+        {
+            ApplyMove(moveDirection);
+        }
     }
 
     private void Move(Vector2 direction)
@@ -49,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
                 beforeDirection = direction;
             }
         }
+    }
+
+    public void SetJumping(bool jumping)
+    {
+        isJumping = jumping;
     }
 
 }
