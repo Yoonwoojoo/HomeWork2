@@ -10,10 +10,9 @@
 | [✈️ 프로젝트 소개(개발환경) ](#airplane-프로젝트-소개) |
 | :---: |
 | [💭 과제 개요 ](#thought_balloon-과제-개요) |
+| [🌟 주요기능 ](#star2-주요기능) |
 | [⏲️ 프로젝트 수행 절차 ](#timer_clock-프로젝트-수행-절차) |
 | [🕹️ 기술 스택 ](#joystick-기술-스택) |
-| [🕸️ 와이어프레임 ](#spider_web-와이어프레임) |
-| [📓 UML ](#notebook-통합모델링-다이어그램) |
 
 </div>
 
@@ -45,17 +44,7 @@
 
 <br>
 
-[:ringed_planet: 목차로 돌아가기](#목차)
 
-<br><br>
-
-## :keyboard: 작동법
-
-![ControllerGuide](https://github.com/ZhamesK/2024-Air-Force/assets/108499207/0c5e486d-81d6-4f6e-9099-b535828658f7)
-
-<br>
-
-[:ringed_planet: 목차로 돌아가기](#목차)
 
 <br><br>
 
@@ -77,40 +66,8 @@
 
 ***
      
-### 2. 적 및 스테이지  
-<table>
-  <tr>
-    <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/85bd197b-abbb-449e-8b47-cdd0ed83d920" alt="stage1To2"></a></td>
-    <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/5c6d9423-2b61-4a0d-9869-f5831f14da58" alt="Stage2To3"></a></td>
-  </tr>
-</table>
-
-   - 적은 상하좌우 랜덤한 방향으로 움직입니다.
-   - 시선은 플레이어를 쫒아가며, 조준 공격을 합니다.
-   - 스테이지는 총 3단계로, 1단계는 중형 크기, 2단계는 소형 크기, 3단계는 대형 크기(보스)가 등장합니다.
-   - 각 스테이지에 따라 적의 수, 배치구도, 능력치, 총알발사 방식이 다릅니다.  
-
-<br>
-
-***
-  
-### 3. 플레이어 공격 기능
-<table>
-  <tr>
-    <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/a189267f-d6b9-4ba4-aec6-021d03c3ea0e" alt="PlayerNormalAttack"></a></td>
-    <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/e6058f79-b86c-4c40-8365-ca04fc4b764f" alt="PurpleItemMultishot"></a></td>
-  </tr>
-</table>
-
-   - 플레이어의 입력에 따라 발사체를 생성하고 조준하는 로직을 구현합니다.
-   - Aim 메서드로 조준 방향을 업데이트 하고, Shoot 메서드로 공격을 실행 하게 만들고, AttackSO는 발사체의 속성을 정의합니다.
-   - 아이템 정보에 접근하여, 아이템 획득 시 다양한 형태의 공격이 가능합니다.
-
-<br>
-
-***
         
-### 4. 아이템 생성
+### 3. 아이템 습득
 <table>
   <tr>
     <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/6b213882-af39-4d1d-98ac-715b3fbb41d4" alt="ItemAppearDisappear"></a></td>
@@ -127,7 +84,7 @@
 
 ***
     
-### 5. 이미지 및 콜라이더 벽 추가
+### 4. 아이템 장착 및 해제
 <table>
   <tr>
     <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/4958fc81-77d1-4029-a380-be86583245fd" alt="CannotGetOut"></a></td>
@@ -141,30 +98,20 @@
 
 ***
     
-### 6. Scene 생성 및 전환
+### 5. 플레이어 공격
 <table>
   <tr>
-    <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/254fe3fb-6d7d-4ed6-be2d-4a940c913b4e" alt="ClickStartBtn"></a></td>
+    <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/a189267f-d6b9-4ba4-aec6-021d03c3ea0e" alt="PlayerNormalAttack"></a></td>
+    <td><a href=""><img src="https://github.com/ZhamesK/2024-Air-Force/assets/108499207/e6058f79-b86c-4c40-8365-ca04fc4b764f" alt="PurpleItemMultishot"></a></td>
   </tr>
 </table>
 
-   - Start Scene와 Game Scene을 생성하여 게임의 완성도를 높였습니다.
-   - Start scene에서 Start 버튼을 누르면 Game Scene로 넘어가 게임을 플레이 할 수 있습니다.
-   - Start scene에서 Off 버튼을 누르면 게임이 종료됩니다.
+   - 플레이어의 입력에 따라 발사체를 생성하고 조준하는 로직을 구현합니다.
+   - Aim 메서드로 조준 방향을 업데이트 하고, Shoot 메서드로 공격을 실행 하게 만들고, AttackSO는 발사체의 속성을 정의합니다.
+   - 아이템 정보에 접근하여, 아이템 획득 시 다양한 형태의 공격이 가능합니다.
 
-<br>
-
-***
         
-### 7. Sound 효과
-   - 게임 진행 내내 BGM이 흘러나와, 게임의 페이스와 리듬을 유지할 수 있습니다.  
-   - 플레이어나 적이 제거될 때마다, 효과음을 추가하여, 게임의 몰입감과 즐거움을 높였습니다.
-
-<br>
-
-***
-        
-### 8. UI
+### 6. 미니맵
 
 <div align="center">
 
@@ -215,26 +162,6 @@
 ## :joystick: 기술 스택
 
 ![TechStack](https://github.com/ZhamesK/2024-Air-Force/assets/167274465/52d9c045-c684-4282-bb6d-8fc178b4915f)
-
-<br>
-
-[:ringed_planet: 목차로 돌아가기](#목차)
-
-<br><br>
-
-## :spider_web: 와이어프레임
-
-![와이어프레임](https://github.com/ZhamesK/2024-Air-Force/assets/108499207/e7b13019-5f24-4fcd-a1c9-4689a6e8210f)
-
-<br>
-
-[:ringed_planet: 목차로 돌아가기](#목차)
-
-<br><br>
-
-## :notebook: 통합모델링 다이어그램
-
-![2024AirForceUML](https://github.com/ZhamesK/2024-Air-Force/assets/167274465/dc177d99-1175-41e1-bf2c-d614bdc018c8)
 
 <br>
 
