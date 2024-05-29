@@ -3,7 +3,7 @@
 
 <br>
 
-![image](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/10c45a2f-8847-4a30-a58f-a8e790131b44)
+![image](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/f1a5b8ac-40d6-43d0-80d0-3d1fc3dac6fe)
 
  
 <br><br>
