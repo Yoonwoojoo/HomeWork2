@@ -98,7 +98,6 @@
 
 ## :notebook: 기술 스택
 
-![TechStack](https://github.com/ZhamesK/2024-Air-Force/assets/167274465/52d9c045-c684-4282-bb6d-8fc178b4915f)
-
+![image](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/ffe62350-efec-4a8c-b5c4-7babcdba1eca)
 
 <br><br>
