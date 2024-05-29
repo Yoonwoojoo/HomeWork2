@@ -80,6 +80,9 @@
 #### 3. **움직이는 플랫폼 구현**
     - 시간에 따라 정해진 구역을 움직이는 발판 구현
     - 플레이어가 발판 위에서 이동할 때 자연스럽게 따라가도록 설정
+    
+![HomeWork2-2 3 1](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/7a1e5595-ae16-4ec4-ad98-0288beb6166d)
+![HomeWork2-2 3 2](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/aa69bcc3-7f68-4dc4-858e-0985f4530373)
 
 <br>
 
