@@ -1,8 +1,9 @@
 # HomeWork2
  Chapter 3-2 Unity 게임개발 숙련 개인과제 
- ![image](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/33622261-b882-4b1c-b553-6dd7dc6e6c75)
-
+ 
 <br>
+
+![image](https://github.com/Yoonwoojoo/HomeWork2/assets/167274465/10c45a2f-8847-4a30-a58f-a8e790131b44)
 
 <div align="center">
 
