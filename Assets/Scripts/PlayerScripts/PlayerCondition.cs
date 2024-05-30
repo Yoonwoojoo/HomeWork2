@@ -6,10 +6,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public interface IDamagable
-{ 
-    void PhysicalDamaged(int damage);
-}
 public class PlayerCondition : MonoBehaviour, IDamagable
 {
     public ConditionController conditionController;
